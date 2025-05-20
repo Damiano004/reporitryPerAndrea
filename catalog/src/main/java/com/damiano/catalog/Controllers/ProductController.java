@@ -44,8 +44,8 @@ public class ProductController {
         return productService.createProduct(product);
     }
 
-    @PutMapping("/{id}")
-    public ProductDTO changeStockNumber(@PathVariable String id,@RequestBody String stock){
+    @PutMapping("/{id}/stock/{stock}")
+    public ProductDTO changeStockNumber(@PathVariable String id, @PathVariable String stock){
         return productService.changeStockNumber(id, Integer.parseInt(stock));
     }
 }
