@@ -33,7 +33,7 @@ public class ShoppingCartController {
     }
 
     @PostMapping("")
-    public ShoppingCart createShoppingCart(@RequestBody ShoppingCart shCart){
+    public ShoppingCartDTO createShoppingCart(@RequestBody ShoppingCart shCart){
         return shoppingCartService.createShoppingCart(shCart);
     }
 }
