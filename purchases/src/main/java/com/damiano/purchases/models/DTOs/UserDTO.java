@@ -1,6 +1,6 @@
 package com.damiano.purchases.models.DTOs;
 
-import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails.Address;
+import com.damiano.purchases.models.Address;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

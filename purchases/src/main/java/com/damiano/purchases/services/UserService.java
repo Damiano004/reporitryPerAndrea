@@ -1,12 +1,14 @@
 package com.damiano.purchases.services;
 
 import java.util.List;
-import java.util.Optional;
+
+import org.springframework.stereotype.Service;
 
 import com.damiano.purchases.models.User;
 import com.damiano.purchases.models.DTOs.UserDTO;
 import com.damiano.purchases.repositories.UserRepository;
 
+@Service
 public class UserService {
     private final UserRepository userRepository;
 

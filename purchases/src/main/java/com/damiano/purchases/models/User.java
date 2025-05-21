@@ -1,6 +1,6 @@
 package com.damiano.purchases.models;
 
-import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails.Address;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
