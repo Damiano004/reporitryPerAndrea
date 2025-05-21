@@ -41,6 +41,7 @@ public class ProductService {
 
     public Product createProduct(ProductDTO product){
         Product p = new Product();
+        p.setCode(product.getCode());
         p.setName(product.getName());
         p.setCategory(product.getCategory());
         p.setDescription(product.getDescription());

@@ -13,12 +13,12 @@ public class GatewayConfig {
         return builder.routes()
             //catalog
             .route("catalog_root", r -> r
-                .path("/catalog")
+                .path("/products")
                 .filters(f -> f.setPath("/api/products"))
                 .uri("lb://catalog"))
                 
             .route("catalog_all", r -> r
-                .path("/catalog/**")
+                .path("/products/**")
                 .filters(f -> 
                     f.stripPrefix(1).prefixPath("/api/products"))
                 .uri("lb://catalog"))
