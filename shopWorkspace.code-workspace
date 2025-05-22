@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../Cose i guess/catalog"
+		},
+		{
+			"path": "../Cose i guess/gateway"
+		},
+		{
+			"path": "../Cose i guess/purchases"
+		},
+		{
+			"path": "../Cose i guess/shopEurekaServer"
+		}
+	],
+    "settings": {
+        "java.configuration.updateBuildConfiguration": "interactive"
+    }
+}
