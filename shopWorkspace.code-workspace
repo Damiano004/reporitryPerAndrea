@@ -1,19 +1,96 @@
 {
 	"folders": [
-		{
-			"path": "../Cose i guess/catalog"
-		},
-		{
-			"path": "../Cose i guess/gateway"
-		},
-		{
-			"path": "../Cose i guess/purchases"
-		},
-		{
-			"path": "../Cose i guess/shopEurekaServer"
-		}
-	],
+        {
+            "name": "catalog",
+            "path": "../Cose i guess/catalog"
+        },
+        {
+            "name": "gateway",
+            "path": "../Cose i guess/gateway"
+        },
+        {
+            "name": "purchases",
+            "path": "../Cose i guess/purchases"
+        },
+        {
+            "name": "shopEurekaServer",
+            "path": "../Cose i guess/shopEurekaServer"
+        }
+    ],
     "settings": {
-        "java.configuration.updateBuildConfiguration": "interactive"
+        //Java
+        "java.configuration.updateBuildConfiguration": "interactive",
+
+        // Restore Terminals
+        "restoreTerminals.terminals": [
+            //git
+            {
+                "splitTerminals": [
+                    {
+                        "name": "git",
+                        "commands": ["& 'C:\\Program Files\\Git\\bin\\bash.exe' -i -c \"cd ../../'Cose i guess'; exec bash\""]
+                    }
+                ]
+                
+            },
+            //eurekaServer
+            {
+                "splitTerminals":[
+                    {
+                        "name": "eureka",
+                        "commands": [
+                            "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Start-Sleep -Seconds 40; cd ../../'Cose i guess'/shopEurekaServer; ./mvnw spring-boot:run\""
+                        ]
+                    }
+                ]
+            }, 
+            //gateway
+            {
+                "splitTerminals":[
+                    {
+                        "name": "gateway",
+                        "commands": [
+                            "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Start-Sleep -Seconds 40; cd ../../'Cose i guess'/gateway; ./mvnw spring-boot:run\""
+                        ]
+                    }
+                ]
+            },
+            //catalog
+            {
+                "splitTerminals":[
+                    {
+                        "name": "catalog",
+                        "commands": [
+                            "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Start-Sleep -Seconds 40; cd ../../'Cose i guess'/catalog; ./mvnw spring-boot:run\""
+                        ]
+                    }
+                ]
+            },
+            //purchases
+            {
+                "splitTerminals":[
+                    {
+                        "name": "purchases",
+                        "commands": [
+                            "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Start-Sleep -Seconds 40; cd ../../'Cose i guess'/purchases; ./mvnw spring-boot:run\""
+                        ]
+                    }
+                ]
+            },
+            //zipkin
+            {
+                "splitTerminals":[
+                    {
+                        "name": "zipkin",
+                        "commands": [
+                            "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command 'cd ..; Start-Sleep -Seconds 3; java -jar .\\zipkin.jar'"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "restoreTerminals.runOnStartup": true,
+        "restoreTerminals.keepExistingTerminalsOpen": false,
+        //"restoreTerminals.artificialDelayMilliseconds": 1000
     }
 }
