@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: eureka-service
+spec:
+  selector:
+    app.kubernetes.io/name: eureka
+  ports:
+    - name: eureka-port
+      port: 8761
+      targetPort: eureka-port

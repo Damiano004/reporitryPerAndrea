@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: catalog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: catalog
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: catalog
+    spec:
+      containers:
+        - name: catalog
+          image: myshop-catalog:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8100
+              name: catalog-port
+          envFrom:
+            - configMapRef:
+                name: config

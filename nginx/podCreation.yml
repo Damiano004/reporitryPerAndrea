@@ -1,0 +1,19 @@
+# Creazione di un Pod
+apiVersion: v1
+# Tipologia (pod, srvice, deployment, etc)
+kind: Pod
+metadata:
+  name: nginx
+  # Creazione di un labels, utili per raggruppare le risorse e in caso filtrarle
+  labels:
+    app.kubernetes.io/name: proxy
+spec:
+  # Creazione dei conteiner contenuti nel pod
+  containers:
+    - name: nginx
+      image: nginx:stable
+      ports:
+        - containerPort: 80
+          # Nome della porta
+          name: http-web-so
+

@@ -1,0 +1,25 @@
+kubectl -n myshop port-forward service/eureka-service 8761:8761apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: gateway
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: gateway
+    spec:
+      containers:
+        - name: gateway
+          image: myshop-gateway:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 9999
+              name: gateway-port
+          envFrom:
+            - configMapRef:
+                name: config

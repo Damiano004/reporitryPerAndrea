@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config
+data:
+  EUREKA_URI: "http://eureka-service:8761/eureka/"
+  ZIPKIN_URI: "http://zipkin-service:9411"
+  SPRING_PROFILES_ACTIVE: "optional:config:server:http://config-server:8888"
